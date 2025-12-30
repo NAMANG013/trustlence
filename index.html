@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustLens | Real-Time Trust Evaluation</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Dynamic Background -->
+    <div class="bg-grid"></div>
+    <div class="glow-orb top-left"></div>
+    <div class="glow-orb bottom-right"></div>
+
+    <nav class="navbar glass">
+        <div class="logo">
+            <i data-lucide="shield-check" class="logo-icon"></i>
+            <span>TrustLens</span>
+        </div>
+        <div class="status-indicator">
+            <span class="dot"></span> System Active
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="badge-pill">
+                    <span class="pulse-dot"></span> Real-Time Security Engine
+                </div>
+                <h1>Evaluate Trust <br><span class="gradient-text">Instantly.</span></h1>
+                <p class="subtitle">A hardware-backed system that evaluates trust after real scans and displays results
+                    in real time. Powered by edge processing.</p>
+
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <span class="stat-label">Latency</span>
+                        <span class="stat-value">
+                            < 50ms</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Privacy</span>
+                        <span class="stat-value">Local</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card glass">
+                <div class="card-header">
+                    <h3>Live Assessment</h3>
+                    <span id="scan-time">Last scan: Just now</span>
+                </div>
+
+                <div class="gauge-container">
+                    <svg class="progress-ring" width="200" height="200">
+                        <circle class="progress-ring__circle-bg" stroke="#333" stroke-width="12" fill="transparent"
+                            r="85" cx="100" cy="100" />
+                        <circle class="progress-ring__circle" stroke="var(--primary)" stroke-width="12"
+                            fill="transparent" r="85" cx="100" cy="100" />
+                    </svg>
+                    <div class="score-display">
+                        <span id="trust-score">0</span>
+                        <span class="score-label">TRUST SCORE</span>
+                    </div>
+                </div>
+
+                <div class="status-result" id="status-result">
+                    <i data-lucide="shield" id="status-icon"></i>
+                    <span id="status-text">WAITING...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Controls -->
+        <section class="controls-section">
+            <button id="simulate-btn" class="glow-button">
+                <i data-lucide="scan-line"></i> Simulate Scan
+            </button>
+            <div id="scan-feedback" class="scan-feedback hidden">
+                <i data-lucide="check-circle"></i> Scan Completed Successfully
+            </div>
+        </section>
+
+        <!-- How It Works Flow -->
+        <section class="flow-section">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card glass">
+                    <div class="step-icon">
+                        <i data-lucide="scan"></i>
+                    </div>
+                    <h3>1. Scan</h3>
+                    <p>Agent performs a scan on the target entity or environment.</p>
+                </div>
+                <div class="arrow-connector">→</div>
+                <div class="step-card glass">
+                    <div class="step-icon">
+                        <i data-lucide="cpu"></i>
+                    </div>
+                    <h3>2. Process</h3>
+                    <p>ESP32 Trust Engine analyzes signals on the edge.</p>
+                </div>
+                <div class="arrow-connector">→</div>
+                <div class="step-card glass">
+                    <div class="step-icon">
+                        <i data-lucide="monitor-check"></i>
+                    </div>
+                    <h3>3. Verify</h3>
+                    <p>Instant decision displayed on dashboard.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture & Features -->
+        <section class="info-grid">
+            <div class="feature-card glass">
+                <h3>Edge Processing</h3>
+                <p>No cloud dependency. All logic runs locally on the ESP32 hardware for maximum privacy and speed.</p>
+            </div>
+            <div class="feature-card glass">
+                <h3>Tamper Proof</h3>
+                <p>Hardware-backed security that prevents manipulation of trust scores once generated.</p>
+            </div>
+            <div class="feature-card glass">
+                <h3>Instant Feedback</h3>
+                <p>Optimized for sub-second latency to provide immediate tactical decision support.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">TrustLens</div>
+            <p>Built for secure, explainable trust decisions.</p>
+            <p class="hackathon-tag">Hackathon Demo 2025</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
